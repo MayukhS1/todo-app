@@ -8,8 +8,8 @@ function App() {
         <div className="App">
             <TaskContextProvider>
                 <NavBar />
-                <TaskList />
                 <TaskForm />
+                <TaskList />
             </TaskContextProvider>
         </div>
     );
