@@ -2,14 +2,20 @@ import React, { useContext, useState } from 'react';
 import { TaskContext } from '../contexts/TaskContext';
 
 const TaskForm = () => {
-    const { addTask } = useContext(TaskContext);
+    const { dispatch } = useContext(TaskContext);
     const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
+    const [details, setDetails] = useState('');
     const handleSubmit = (e) => {
         e.preventDefault();
-        addTask(title, description);
+        dispatch({
+            type: 'ADD_TASK',
+            task: {
+                title,
+                details
+            }
+        });
         setTitle('');
-        setDescription('');
+        setDetails('');
     };
     return (
         <form onSubmit={handleSubmit}>
@@ -25,9 +31,9 @@ const TaskForm = () => {
             <input
                 type="text"
                 placeholder="Add descriptions (not mandatory)"
-                value={description}
+                value={details}
                 onChange={(e) => {
-                    setDescription(e.target.value);
+                    setDetails(e.target.value);
                 }}
             />
             <input type="submit" />

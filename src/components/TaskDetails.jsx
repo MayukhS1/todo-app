@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import { TaskContext } from '../contexts/TaskContext';
 
 const TaskDetails = ({ task }) => {
-    const { removeTask } = useContext(TaskContext);
+    const { dispatch } = useContext(TaskContext);
     return (
         <li
             onClick={() => {
-                removeTask(task.id);
+                dispatch({ type: 'REMOVE_TASK', id: task.id });
             }}
         >
             <div className="title">{task.title}</div>
