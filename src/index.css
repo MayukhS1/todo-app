@@ -31,6 +31,7 @@ code {
 
 .task-list {
     margin: 20px;
+    padding-bottom: 10px;
 }
 .task-list ul {
     padding: 0;
@@ -59,10 +60,11 @@ code {
 .empty {
     margin: 20px;
     text-align: center;
+    padding-bottom: 20px;
 }
 
 form {
-    padding: 20px;
+    padding: 20px 20px 0px 20px;
 }
 input[type='text'] {
     width: 100%;
@@ -75,8 +77,10 @@ input[type='text'] {
 }
 input[type='submit'] {
     margin: 10px auto;
-    background: #eee;
-    border: 0;
-    padding: 6px 20px;
+    background: #3c1f3c;
+    color: #ffb4ff;
+    border: 2px solid #5a3c5a;
+    border-radius: 10px;
+    padding: 10px 30px;
     display: block;
 }
